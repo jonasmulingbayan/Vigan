@@ -1,0 +1,101 @@
+:root {
+    --primary-light: #520000;
+    --primary-dark: #000000;
+    --black: #000000;
+    --white: #efefef;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#festivals {
+    padding: 150px 30px;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/festivals/events-bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.main-festival{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: start;
+}
+.festival-container {
+    display: grid;
+    width: 48%;
+    place-content: center;
+    margin-bottom:30px;
+}
+
+.festival-container h2{
+    color: var(--white)
+}
+.gallery {
+    --s: 150px; /* control the size */
+    --g: 10px;  /* control the gap */
+    --f: 1.5;   /* control the scale factor */
+    display: grid;
+    gap: var(--g);
+    width: calc(3*var(--s) + 2*var(--g));
+    aspect-ratio: 1;
+    grid-template-columns: repeat(3,auto);
+}
+  
+.gallery > img {
+    width: 0;
+    height: 0;
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    filter: grayscale(80%);
+    transition: .35s linear;
+    border-radius: 5px;
+    border: 2px solid var(--white);
+}
+  
+.gallery img:hover{
+    filter: grayscale(0);
+    width:  calc(var(--s)*var(--f));
+    height: calc(var(--s)*var(--f));
+}
+
+@media(max-width:1100px){
+    .main-festival{
+        flex-wrap: wrap;
+    }
+    .festival-container{
+        width: 100%;
+    }
+
+    .festival-container h2{
+        font-size:20px;
+    }
+}
+
+@media(max-width:998px){
+    #festivals {
+        padding: 130px 20px 50px 20px;
+    }
+}
+
+@media(max-width:500px){
+    .gallery {
+        --s: 130px;
+        --g: 5px;  
+        gap: var(--g);
+        width: calc(2*var(--s) + 1*var(--g));
+    }
+      
+}
+  
+ 

@@ -1,0 +1,156 @@
+:root {
+    --primary-light: #520000;
+    --primary-dark: #000000;
+    --black: #000000;
+    --white: #efefef;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#explore-container {
+    width: 100%; 
+    height: 100%;
+    display: flex;
+    align-items: start;
+}
+.explore-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top:200px;
+}
+.explore-items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.explore-items img{
+    height: 550px;
+    width: 700px;
+}
+
+.explore-items h1 {
+  font-size: 55px;
+  color: var(--primary-light);
+  font-weight: 500;
+  font-family: "Libre Baskerville";
+  overflow: hidden;  
+  white-space: nowrap; 
+  font-style: italic;
+  text-align: center;
+  text-transform: uppercase;
+  animation: typing 3s steps(26, end) infinite; 
+}
+
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+#explore-container-2{
+    padding: 130px 30px;
+    display: flex;
+    flex-direction: column;
+    gap:60px;
+}
+
+.explore-main h2{
+    font-size:40px;
+    font-weight: 600;
+}
+
+.explore-main p{
+    font-size:22px;
+}
+.explore-main-items{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:20px;
+}
+.item-image{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+.item-image img{
+    height: 100px;
+    width: 130px;
+    border-radius: 5px;
+}
+
+.mainImage{
+    height: 520px;
+    width: 800px;
+    border-radius: 10px;
+}
+
+.explore-main-items img:hover{
+    transform:scale(1.02);
+    transition: ease-in-out 0.5s;
+    border:1px solid var(--primary-light);
+}
+
+@media(max-width:998px){
+    .explore-items h1 {
+        font-size: 50px;
+    }
+    .explore-items img{
+        height: 100%;
+        width: 100%;
+    }
+    .explore-main-items{
+        flex-direction: column;
+    }
+    .item-image{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .item-image img{
+        height: 100px;
+        width: 130px;
+        border-radius: 5px;
+    }
+    
+}
+
+@media(max-width:700px){ 
+    .explore-items h1 {
+        font-size: 20px;
+      }
+      .explore-content{
+        padding-top:130px;
+    }
+
+    .explore-main-items{
+        gap:20px;
+    }
+    .explore-main h2{
+        font-size:25px;
+    }
+    
+    .explore-main p{
+        font-size:18px;
+    }
+
+    .item-image{
+        flex-wrap: wrap;
+    }
+
+    .mainImage{
+        height: 350px;
+        width: 100%;
+    }
+}

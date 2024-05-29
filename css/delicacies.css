@@ -1,0 +1,97 @@
+:root {
+    --primary-light: #520000;
+    --primary-dark: #000000;
+    --black: #000000;
+    --white: #efefef;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#delicacies {
+    width: 100%; 
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/home/calesa.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delicacies-content{
+    margin-top:170px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 80px;
+}
+.delicacies-content h2{
+    color: var(--white);
+    font-size:40px;
+}
+.delicacies-main-items{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap:20px;
+}
+
+
+.items {
+    display: inline-block;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden; /* Ensure the overlay doesn't exceed container bounds */
+}
+
+.image-container img {
+    height: 250px;
+    width: 350px;
+    display: block;
+    border-radius: 5px;
+}
+
+.image-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Black with 70% opacity */
+    transition: opacity 0.3s ease; /* Smooth transition */
+    opacity: 1; /* Start with the overlay visible */
+    z-index: 1; /* Ensure overlay is above the image */
+}
+
+.image-container:hover::after {
+    opacity: 0; /* Hide the overlay on hover */
+}
+
+
+.items p {
+    position: relative;
+    z-index: 2; /* Ensure the text is above the overlay */
+    font-size:22px;
+    color:var(--white); /* Optional: style text to be visible on overlay */
+    margin-top: -45px;
+    padding: 0 10px;
+}
+
+@media(max-width:700px){
+    .image-container img {
+        height: 300px;
+        width: 450px;
+    }
+
+    .items p {
+        font-size:18px;
+    }
+}
